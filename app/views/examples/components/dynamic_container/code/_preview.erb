@@ -1,0 +1,6 @@
+<%= render_dynamic_container classes: "gap-y-3" do %>
+  <div class="bg-green-300 p-5 text-xl">Centered content</div>
+  <div class="<%=Components::DynamicContainerHelper::FULL_SIZE_CLASSES%> bg-slate-300 p-5 text-xl">Full Size content</div>
+  <div class="<%=Components::DynamicContainerHelper::FREE_ITEM%> bg-blue-300 col-start-2 col-end-4 p-5 text-xl">Custom position content</div>
+  <div class="<%=Components::DynamicContainerHelper::FREE_ITEM%> bg-blue-300 col-start-1 col-end-3 p-5 text-xl">Custom position content</div>
+<% end %>
