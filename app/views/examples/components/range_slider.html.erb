@@ -1,0 +1,26 @@
+<%= render_component_header title: "Range slider",
+      description: "An input where the user can select the maximum and minimum values between a range" %>
+
+<% content_for :preview, flush: true do %>
+  <div class="w-full flex justify-center">
+    <%= render_code_preview('range_slider') %>
+  </div>
+<% end %>
+
+<% content_for :code, flush: true do %>
+<div class="w-full flex justify-center">
+  <%= code_partial("range_slider/preview", :erb) %>
+</div>
+<% end %>
+
+<%= render_preview %>
+
+<h2 class="font-heading scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0" id="installation">Installation</h2>
+<%= code_sample(language: "sh") do %>
+  rails generate shadcn-ui range-slider
+<% end %>
+
+<h2 class="font-heading mt-12 scroll-m-20 border-b pb-2 mb-2 text-2xl font-semibold tracking-tight first:mt-0" id="usage">Usage</h2>
+<%= code_partial("range_slider/usage", :erb) %>
+
+<%= render_usage("range_slider") %>
