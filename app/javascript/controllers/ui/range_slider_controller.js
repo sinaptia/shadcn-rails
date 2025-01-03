@@ -17,21 +17,17 @@ export default class UIRangeSliderController extends Controller {
       [thumb1Value, thumb2Value] = [thumb2Value, thumb1Value];
     }
 
-    const range = this.maxValue - this.minValue;
-    const thumb1Percent = ((thumb1Value - this.minValue) / range) * 100;
-    const thumb2Percent = ((thumb2Value - this.minValue) / range) * 100;
-
     // Update labels
-    this.label1Target.style.left = `${thumb1Percent}%`;
+    this.label1Target.style.left = `${thumb1Value}%`;
     this.label1Target.textContent = thumb1Value;
 
-    this.label2Target.style.left = `${thumb2Percent}%`;
+    this.label2Target.style.left = `${thumb2Value}%`;
     this.label2Target.textContent = thumb2Value;
 
-    // Update range colour between thumbs
-    this.rangeTarget.style.left = `${thumb1Percent}%`;
-    this.rangeTarget.style.width = `${thumb2Percent - thumb1Percent}%`;
-}
+    // Update range track
+    this.rangeTarget.style.width = `${thumb2Value - thumb1Value}%`;
+    this.rangeTarget.style.left = `${thumb1Value}%`;
+  }
 
   thumb1Changed() {
     this.updateUI();

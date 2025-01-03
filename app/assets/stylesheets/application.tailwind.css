@@ -63,3 +63,7 @@ article.documentation pre {
 article.documentation p > code {
   @apply text-white bg-black p-1 rounded;
 }
+
+.range input[type="range"] {
+  background: none;
+}
