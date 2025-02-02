@@ -1,0 +1,16 @@
+<p class="leading-7">The Dynamic Container component introduces:</p>
+
+<ul class="my-6 ml-6 list-disc [&>li]:mt-2 text-sm">
+  <li><%= code("app/helpers/components/dynamic_container_helper.rb") %></li>
+  <li><%= code("app/views/components/ui/_dynamic_container.html.erb") %></li>
+</ul>
+
+<p class="leading-7 mt-6">
+  The method <%= code("render_dynamic_content") %> defined in <%= code("app/helpers/components/dynamic_content_helper.rb") %> will render a container that centers each item by default, limiting the content size to 75rem.
+  Upon triggering the file dialog or dragging and dropping files, the controller will delegate the files individually to a function, <%= code("uploadFile") %>. It is up to you to define what to do when a a file is to be uploaded.
+<p>
+
+<p class="leading-7 mt-6">
+  The content limit(<%= code("75rem") %> by default) can be removed in purpose to reach the edges of the viewport using <%= code("Components::DynamicContainerHelper::FULL_SIZE_CLASSES")%> and <%= code("Components::DynamicContainerHelper::FREE_ITEM")%>
+  <%= code("FREE_ITEM") %> remove any predefined style to the direct childrens, so you still need to set <%= code("col-*") %> or <%= code("row-*") %> depending what you want
+</p>
