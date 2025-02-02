@@ -1,0 +1,16 @@
+<div data-controller="ui--time-picker">
+  <div class="inline-flex items-center border rounded-md">
+    <% # https://heroicons.com/ %>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar mx-2 h-4 w-4">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+    </svg>
+    <input type="text" inputmode="numeric" placeholder="hh" pattern="^(0[1-9]|1[0-2])" data-ui--time-picker-target="hour" data-action="input->ui--time-picker#handleHourChange" class="border-none focus:ring-0 rounded-md max-w-[35px] p-0.5" />
+    :
+    <input type="text" inputmode="numeric" placeholder="mm" pattern="^([0-5][0-9])" data-ui--time-picker-target="minutes" data-action="input->ui--time-picker#handleMinutesChange" class="border-none focus:ring-0 rounded-md max-w-[40px] pl-2.5 p-0.5" />
+    <select data-ui--time-picker-target="ampm" data-action="input->ui--time-picker#handleAmpmChange" class="border-none rounded-md">
+      <option value="am">AM</option>
+      <option value="pm">PM</option>
+    </select>
+    <input type="hidden" name=<%=name%> value="<%=value%>" data-ui--time-picker-target="time" />
+  </div>
+</div>
