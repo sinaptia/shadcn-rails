@@ -121,6 +121,10 @@ input[type="range"] {
   background-repeat: no-repeat;
 }
 
+.range input[type="range"] {
+  @apply bg-transparent bg-none;
+}
+
 /* Input Thumb */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;

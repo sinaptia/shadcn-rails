@@ -1,0 +1,54 @@
+<div
+  data-controller="ui--range-slider"
+  data-ui-range-slider-min-value="0"
+  data-ui-range-slider-max-value="100"
+  class="relative w-full py-8"
+>
+  <!-- Slider Track -->
+  <div class="relative h-2 bg-gray-300 rounded-full">
+    <div
+      class="absolute h-2 bg-black rounded-full"
+      data-ui--range-slider-target="range"
+    ></div>
+
+    <!-- Thumb 1 -->
+    <div class="range">
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+        class="range-slider absolute w-full appearance-none pointer-events-none outline-none [&::-webkit-slider-thumb]:pointer-events-auto [&::-moz-range-thumb]:pointer-events-auto"
+        data-ui--range-slider-target="thumb1"
+        data-action="input->ui--range-slider#thumb1Changed"
+      />
+      <div
+        class="absolute text-xs text-black mt-4 transform -translate-x-1/2 px-2 py-1"
+        data-ui--range-slider-target="label1"
+        style="left: 0%;"
+      >
+        0
+      </div>
+    </div>
+
+    <!-- Thumb 2 -->
+    <div class="range">
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value="100"
+        class="range-slider absolute w-full appearance-none pointer-events-none outline-none [&::-webkit-slider-thumb]:pointer-events-auto [&::-moz-range-thumb]:pointer-events-auto"
+        data-ui--range-slider-target="thumb2"
+        data-action="input->ui--range-slider#thumb2Changed"
+      />
+      <div
+        class="absolute text-xs text-black mt-4 transform -translate-x-1/2 px-2 py-1"
+        data-ui--range-slider-target="label2"
+        style="left: 100%;"
+      >
+        100
+      </div>
+    </div>
+  </div>
+</div>
